@@ -28,6 +28,7 @@ int main(){
 		if(opcion == 1){
 			cout<<"------------------------------------"<<endl;
 			matriz = crearMatriz(filas, columnas);
+			cout<<"Matríz creada exitosamente"<<endl;
 			cout<<"------------------------------------"<<endl;
 		}
 		if(opcion == 2){
@@ -76,7 +77,8 @@ char** crearMatriz(int filas, int columnas){
 			}
 			if(j+1>columnas){
 				let3 = '.';
-				let3 = mat[i-1][j+1];
+			}else{
+				let3 = mat[i-1][j+1];	
 			}
 			let2 = mat[i-1][j];
 			if(let1== '^' && let2 == '^' && let3 == ','){
