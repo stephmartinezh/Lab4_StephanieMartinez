@@ -82,7 +82,7 @@ char** crearMatriz(int filas, int columnas){
 			}else{
 				let1 = mat[i-1][j-1];
 			}
-			if(j+1>columnas){
+			if(j+1>columnas-1){
 				let3 = '.';
 			}else{
 				let3 = mat[i-1][j+1];	
