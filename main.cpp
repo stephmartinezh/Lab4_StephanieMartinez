@@ -11,13 +11,15 @@ void liberarMatriz(char**, int);
 
 void imprimirMatriz(char**, int, int);
 
+void contar(char**,int, int);
+
 int main(){
 	int opcion = 0;
-	cout<<"Ingrese el número de filas: ";
+	cout<<"Ingrese el número de columnas: ";
         int filas,columnas;
-        cin>> filas;
-        cout<<"Ingrese el número de columnas: ";
         cin>> columnas;
+        cout<<"Ingrese el número de filas: ";
+        cin>> filas;
 	char** matriz = NULL;
 	do{
 		opcion = menu();
@@ -27,13 +29,18 @@ int main(){
 		}
 		if(opcion == 1){
 			cout<<"------------------------------------"<<endl;
-			matriz = crearMatriz(filas, columnas);
+			matriz = crearMatriz(filas,columnas);
 			cout<<"Matríz creada exitosamente"<<endl;
 			cout<<"------------------------------------"<<endl;
 		}
 		if(opcion == 2){
 			cout<<"------------------------------------"<<endl;
-			imprimirMatriz(matriz, filas, columnas);
+			imprimirMatriz(matriz, columnas, filas);
+			cout<<"------------------------------------"<<endl;
+		}
+		if(opcion == 3){
+			cout<<"------------------------------------"<<endl;
+			contar(matriz,columnas,filas);	
 			cout<<"------------------------------------"<<endl;
 		}	
 	}while(opcion != 4);
@@ -113,3 +120,14 @@ void imprimirMatriz(char** mat, int filas, int columnas){
 	}
 }
 
+void contar(char** mat, int filas, int columnas){
+	int cont = 0;
+	for(int i = 0; i<filas; i++){
+		for(int j = 0; j<columnas; j++){
+			if(mat[i][j] == '.'){
+				cont++;
+			}
+		}
+	}
+	cout<<"El número de azulejos seguros es: "<<cont<<endl;
+}
