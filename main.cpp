@@ -47,20 +47,46 @@ char** crearMatriz(){
 	cin>> filas;
 	cout<<"Ingrese el número de columnas: ";
 	cin>> columnas;
-	char** matriz = new char*[filas];
+	char** mat = new char*[filas];
 	for(int i = 0; i<filas; i++){
-		matriz[i] = new char[columnas];
+		mat[i] = new char[columnas];
 	}
 	for(int i = 0; i<1; i++){
 		for(int j = 0; j<columnas; j++){
 		char c;
 		cout<< "Ingrese un caracter: ";
 		cin>> c;
-		matriz[i][j] = c;
+		mat[i][j] = c;
 		}
 
 	}
-	return matriz;
+	for(int i = 1; i<filas; i++){
+		for(int j = 0; j<columnas; j++){
+			char let1, let2, let3;
+			if(j-1<0){
+				let1 = '.';
+			}else{
+				let1 = mat[i-1][j-1];
+			}
+			if(j+1>columnas){
+				let3 = '.';
+				let3 = mat[i-1][j+1];
+			}
+			let2 = mat[i-1][j];
+			if(let1== '^' && let2 == '^' && let3 == ','){
+				mat[i][j] = '^';
+			} else if(let1 == '.' && let2 == '^' && let3 == '^'){
+				mat[i][j] = '^';
+			} else if(let1 == '^' && let2 == '.' && let3 == '.'){
+				mat[i][j] = '^';
+			} else if(let1 == '.' && let2 == '.' && let3 == '^'){
+				mat[i][j] = '^';
+			} else{
+				mat[i][j] = '.';
+			}
+		}
+	}
+	return mat;
 }
 
 /*void liberarMatriz(char** mat, int filas, int columnas){
