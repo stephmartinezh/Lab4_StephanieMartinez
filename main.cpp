@@ -88,7 +88,7 @@ char** crearMatriz(int filas, int columnas){
 				let3 = mat[i-1][j+1];	
 			}
 			let2 = mat[i-1][j];
-			if(let1== '^' && let2 == '^' && let3 == ','){
+			if(let1== '^' && let2 == '^' && let3 == '.'){
 				mat[i][j] = '^';
 			} else if(let1 == '.' && let2 == '^' && let3 == '^'){
 				mat[i][j] = '^';
