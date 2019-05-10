@@ -35,12 +35,12 @@ int main(){
 		}
 		if(opcion == 2){
 			cout<<"------------------------------------"<<endl;
-			imprimirMatriz(matriz, columnas, filas);
+			imprimirMatriz(matriz, filas, columnas);
 			cout<<"------------------------------------"<<endl;
 		}
 		if(opcion == 3){
 			cout<<"------------------------------------"<<endl;
-			contar(matriz,columnas,filas);	
+			contar(matriz,filas,columnas);	
 			cout<<"------------------------------------"<<endl;
 		}	
 	}while(opcion != 4);
